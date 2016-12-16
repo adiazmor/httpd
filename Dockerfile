@@ -11,4 +11,4 @@ EXPOSE 80
 RUN yum -y update && yum -y install httpd && yum clean all
 
 #Execute Apache2 in FOREGROUND
-CMD ["/usr/sbin/apachectl -DFOREGROUND"]
+ENTRYPOINT ["/usr/sbin/httpd", "-D", "FOREGROUND"]
